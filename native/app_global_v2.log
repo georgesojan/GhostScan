@@ -1,0 +1,20 @@
+Exception in thread Thread-2 (run_async):
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/threading.py", line 1044, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.13/threading.py", line 995, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ge/.gemini/antigravity/scratch/ghostscan/native/app.py", line 213, in run_async
+    self.loop.run_until_complete(self.scanner.scan_range(ips, ports, self.on_discovery))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/asyncio/base_events.py", line 701, in run_until_complete
+    self._check_running()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/asyncio/base_events.py", line 637, in _check_running
+    raise RuntimeError('This event loop is already running')
+RuntimeError: This event loop is already running
+/usr/lib/python3.13/threading.py:1046: RuntimeWarning: coroutine 'AsyncScanner.scan_range' was never awaited
+  self._invoke_excepthook(self)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback

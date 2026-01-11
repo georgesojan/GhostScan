@@ -1,0 +1,156 @@
+:root {
+  --bg-color: #050505;
+  --panel-bg: #0a0a0a;
+  --accent-color: #00ff9d;
+  --error-color: #ff3e3e;
+  --text-main: #e0e0e0;
+  --text-dim: #888888;
+  --border-color: #1a1a1a;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: 60px 1fr;
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.header {
+  grid-column: 1 / -1;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: var(--panel-bg);
+  justify-content: space-between;
+}
+
+.header h1 {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.sidebar {
+  border-right: 1px solid var(--border-color);
+  background: var(--panel-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-content {
+  padding: 20px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.card {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 3px solid var(--accent-color);
+}
+
+.status-tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 2px;
+  background: rgba(0, 255, 157, 0.1);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.btn-danger {
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
+
+.btn-danger:hover {
+  background: var(--error-color);
+  color: var(--text-main);
+}
+
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.device-row {
+  display: grid;
+  grid-template-columns: 150px 120px 1fr 150px;
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.device-row:hover {
+  background: rgba(0, 255, 157, 0.05);
+}
+
+.ip { color: var(--accent-color); font-weight: bold; }
+.ports { color: #5bc0de; }
+.location { color: var(--text-dim); }
+
+/* Glitch effect for titles */
+.glitch {
+  position: relative;
+}
+
+.scan-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  background: #111;
+  border: 1px solid var(--border-color);
+  color: white;
+  padding: 8px;
+  font-family: inherit;
+}
